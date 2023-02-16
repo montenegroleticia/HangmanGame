@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Roboto:wght@400;700&display=swap");
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+}
+.container {
+  width: 1025px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 38px;
+  margin-right: 53px;
+}
+.container img {
+  margin-top: 59px;
+  width: 400px;
+  height: 466px;
+}
+.palavra {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.palavra button {
+  margin-top: 89px;
+  width: 200px;
+  height: 60px;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border: transparent;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+}
+.palavra p {
+  font-family: "Noto Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 68px;
+}
+.letras {
+  margin-top: 70px;
+  margin-bottom: 56px;
+  margin-left: 211px;
+  width: 814px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.letras button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #7aa7c7;
+  border-radius: 3px;
+  color: #798a9f;
+  margin: 10px;
+  text-transform: uppercase;
+}
+.off {
+  color: #798a9f;
+  background-color: #9faab5;
+}
+.on {
+  color: #39739d;
+  background-color: #e1ecf4;
+}
+.palavra-chute {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 56px;
+}
+.palavra-chute p {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  margin-right: 12px;
+}
+.palavra-chute input {
+  width: 353px;
+  height: 40px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+}
+.palavra-chute button {
+  width: 100px;
+  height: 40px;
+  background-color: #e1ecf4;
+  border: 1px solid #7aa7c7;
+  border-radius: 3px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #3c76a1;
+  margin-left: 15px;
+}
+.esconder {
+  display: none;
+}
