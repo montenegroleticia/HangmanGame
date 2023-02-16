@@ -57,17 +57,14 @@ body {
   height: 40px;
   border: 1px solid #7aa7c7;
   border-radius: 3px;
-  color: #798a9f;
   margin: 10px;
   text-transform: uppercase;
-}
-.off {
-  color: #798a9f;
-  background-color: #9faab5;
-}
-.on {
   color: #39739d;
   background-color: #e1ecf4;
+}
+.letras button:disabled {
+  color: #798a9f;
+  background-color: #9faab5;
 }
 .palavra-chute {
   display: flex;
