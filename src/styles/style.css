@@ -21,6 +21,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-end;
 }
 .palavra button {
   margin-top: 89px;

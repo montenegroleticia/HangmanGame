@@ -21,10 +21,11 @@ export default function App() {
     //const images = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
     // setImage(forca0);
   //}
+  
   return (
     <>
       <Jogo image={forca0} setPalavraEscondida={setPalavraEscondida} palavraEscondida={palavraEscondida} />
-      <Letras state={true} />
+      <Letras state={ palavraEscondida ? false :true} />
       <Chute />
     </>
   );
