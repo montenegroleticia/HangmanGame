@@ -1,14 +1,14 @@
 import palavras from "../palavras";
 
-export default function Jogo({setPalavraEscondida, palavraEscondida, image}){
+export default function Jogo({setPalavraEscondida, palavraEscondida, image, setLetrasClicadas, ganhou}){
 
     function pegarPalavra(){
+        setLetrasClicadas("");
         const index = Math.floor(Math.random() * palavras.length);
         const arrayPalavra = palavras[index].split('');
-        // const escondePalavra = arrayPalavra.replace('_ ');
+        //const escondePalavra = arrayPalavra.replace('_');
         setPalavraEscondida(arrayPalavra);
-        console.log(arrayPalavra);
-        console.log(palavraEscondida);
+        //console.log(escondePalavra);
       }
       
     return (
@@ -16,7 +16,7 @@ export default function Jogo({setPalavraEscondida, palavraEscondida, image}){
             <img src={image} alt='forca' />
             <div className='palavra'>
                 <button onClick={() => pegarPalavra()}>Escolher Palavra</button>
-                <p>{palavraEscondida}</p>
+                <p className={ganhou} >{palavraEscondida}</p>
             </div>
         </div>
     )

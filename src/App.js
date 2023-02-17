@@ -16,6 +16,8 @@ import forca0 from "./assets/forca0.png";
 
 export default function App() {
   const [palavraEscondida, setPalavraEscondida] = useState('');
+  const [letrasClicadas, setLetrasClicadas] = useState('');
+  const [ganhou, setGanhou] = useState('');
   // const [image, setImage] =  useState(');
   //function forca(){
     //const images = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
@@ -24,9 +26,16 @@ export default function App() {
   
   return (
     <>
-      <Jogo image={forca0} setPalavraEscondida={setPalavraEscondida} palavraEscondida={palavraEscondida} />
-      <Letras state={ palavraEscondida ? false :true} />
-      <Chute />
+      <Jogo image={forca0} 
+      setPalavraEscondida={setPalavraEscondida} palavraEscondida={palavraEscondida} setLetrasClicadas = {setLetrasClicadas} 
+      ganhou={ganhou} />
+
+      <Letras state={ palavraEscondida ? false :true} 
+      palavraEscondida={palavraEscondida} 
+      setLetrasClicadas = {setLetrasClicadas} letrasClicadas={letrasClicadas} 
+      setGanhou={setGanhou} ganhou={ganhou}/>
+
+      <Chute palavraEscondida={palavraEscondida} />
     </>
   );
 }
