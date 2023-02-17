@@ -7,11 +7,6 @@ export default function Letras(props){
             <button key={index} disabled={props.state}>{l}</button>
             )}
         </div>
-        <div className="palavra-chute esconder">
-            <p>Já sei a palavra!</p>
-            <input></input>
-            <button>Chutar</button>
-        </div>
         </>
     )
 }
