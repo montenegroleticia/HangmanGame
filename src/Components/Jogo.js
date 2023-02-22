@@ -1,7 +1,7 @@
 import palavras from "../palavras";
 import forca0 from "../assets/forca0.png";
 
-export default function Jogo({setPalavraEscondida, palavraEscondida, image, setLetrasClicadas, setLetrasCertas, setGanhou, ganhou, setPerdeu, setContador, setPalavraMostrada, palavraMostrada, setState}){
+export default function Jogo({setPalavraEscondida, image, setLetrasClicadas, setLetrasCertas, setGanhou, ganhou, setPerdeu, setContador, setPalavraMostrada, palavraMostrada, setState}){
 
     function pegarPalavra(){
         setState(false);

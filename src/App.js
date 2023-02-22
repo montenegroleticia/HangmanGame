@@ -21,7 +21,7 @@ export default function App() {
   return (
     <>
       <Jogo image={perdeu} 
-      setPalavraEscondida={setPalavraEscondida} palavraEscondida={palavraEscondida} 
+      setPalavraEscondida={setPalavraEscondida} 
       setLetrasClicadas={setLetrasClicadas} 
       setLetrasCertas={setLetrasCertas} 
       setGanhou={setGanhou} ganhou={ganhou} 
@@ -37,7 +37,8 @@ export default function App() {
       setGanhou={setGanhou}
       setPerdeu={setPerdeu}
       setContador={setContador} contador={contador} 
-      setState={setState}/>
+      setState={setState}
+      setPalavraMostrada={setPalavraMostrada} palavraMostrada={palavraMostrada} />
 
       <Chute palavraEscondida={palavraEscondida} />
     </>

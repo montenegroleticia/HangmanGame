@@ -6,20 +6,22 @@ import forca4 from "../assets/forca4.png";
 import forca5 from "../assets/forca5.png";
 import forca6 from "../assets/forca6.png";
 
-export default function Letras({state, palavraEscondida, setLetrasClicadas, letrasClicadas, setLetrasCertas, letrasCertas, setGanhou, setPerdeu, setContador, contador, setState}){
+export default function Letras({state, palavraEscondida, setLetrasClicadas, letrasClicadas, setLetrasCertas, letrasCertas, setGanhou, setPerdeu, setContador, contador, setState, setPalavraMostrada}){
 
     const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     const images = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
 
     function ganhouJogo(){
-        if (palavraEscondida.includes(letrasCertas)){
-           setGanhou('ganhou');
-           setState(true);
+        if (palavraEscondida.length === letrasCertas.length){
+            setPalavraMostrada(palavraEscondida);
+            setGanhou('ganhou');
+            setState(true);
         }
     }
 
     function perdeuJogo(){
         if (contador === 6){
+            setPalavraMostrada(palavraEscondida);
             setGanhou('perdeu');
             setState(true);
         }
@@ -29,6 +31,7 @@ export default function Letras({state, palavraEscondida, setLetrasClicadas, letr
         if (palavraEscondida.includes(l)){
             setLetrasClicadas([...letrasClicadas, l]);
             setLetrasCertas([...letrasCertas, l]);
+            setPalavraMostrada(palavraEscondida.map((l) => `${l}`));
             ganhouJogo();
 
         } else {
