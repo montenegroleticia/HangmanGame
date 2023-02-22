@@ -45,7 +45,7 @@ export default function App() {
       setPesquisa={setPesquisa} pesquisa={pesquisa} 
       setPalavraMostrada={setPalavraMostrada} palavraMostrada={palavraMostrada} 
       setGanhou={setGanhou}
-      setState={setState}  />
+      setState={setState} state={state} />
     </>
   );
 }

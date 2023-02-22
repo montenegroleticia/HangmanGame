@@ -1,4 +1,4 @@
-export default function Chute(palavraEscondida, pesquisa, setPesquisa, setPalavraMostrada, setGanhou, setState){
+export default function Chute(palavraEscondida, pesquisa, setPesquisa, setPalavraMostrada, setGanhou, setState, state){
 
     function pesquisar(){
         if (pesquisa === palavraEscondida){
@@ -9,9 +9,9 @@ export default function Chute(palavraEscondida, pesquisa, setPesquisa, setPalavr
     }
 
     return (
-        <div className="palavra-chute esconder">
+        <div className="palavra-chute">
             <p>Já sei a palavra!</p>
-            <input data-test="guess-input" value={pesquisa} onChange={e => setPesquisa(e.target.value)} ></input>
+            <input data-test="guess-input" placeholder="" value={pesquisa} onChange={e => setPesquisa(e.target.value)} disabled={state} ></input>
             <button data-test="guess-button" onClick={pesquisar} >Chutar</button>
         </div>
     )
