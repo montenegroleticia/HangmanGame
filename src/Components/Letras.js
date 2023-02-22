@@ -12,7 +12,7 @@ export default function Letras({state, palavraEscondida, setLetrasClicadas, letr
     const images = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
 
     function ganhouJogo(){
-        if (letrasCertas.includes(palavraEscondida)){
+        if (palavraEscondida.includes(letrasCertas)){
            setGanhou('ganhou');
         }
     }
@@ -42,7 +42,7 @@ export default function Letras({state, palavraEscondida, setLetrasClicadas, letr
         <>
         <div className="letras">
             {alfabeto.map((l, index)=>
-            <button onClick={() => verificarPalavra(palavraEscondida, l)} key={index} disabled={letrasClicadas.includes(l) ? true : state}>{l}</button>
+            <button data-test="letter" onClick={() => verificarPalavra(palavraEscondida, l)} key={index} disabled={letrasClicadas.includes(l) ? true : state}>{l}</button>
             )}
         </div>
         </>

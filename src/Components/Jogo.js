@@ -1,7 +1,7 @@
 import palavras from "../palavras";
 import forca0 from "../assets/forca0.png";
 
-export default function Jogo({setPalavraEscondida, palavraEscondida, image, setLetrasClicadas, setLetrasCertas, setGanhou, ganhou, setPerdeu, setContador}){
+export default function Jogo({setPalavraEscondida, palavraEscondida, image, setLetrasClicadas, setLetrasCertas, setGanhou, ganhou, setPerdeu, setContador, setPalavraMostrada, palavraMostrada}){
 
     function pegarPalavra(){
         setLetrasClicadas('');
@@ -11,17 +11,16 @@ export default function Jogo({setPalavraEscondida, palavraEscondida, image, setL
         setContador(0);
         const index = Math.floor(Math.random() * palavras.length);
         const arrayPalavra = palavras[index].split('');
-        //const escondePalavra = arrayPalavra.replace('_');
         setPalavraEscondida(arrayPalavra);
-        //console.log(escondePalavra);
+        setPalavraMostrada(arrayPalavra.map(() => "_ "));
       }
       
     return (
         <div className='container'>
-            <img src={image} alt='forca' />
+            <img data-test="game-image" src={image} alt='forca' />
             <div className='palavra'>
-                <button onClick={() => pegarPalavra()}>Escolher Palavra</button>
-                <p className={ganhou} >{palavraEscondida}</p>
+                <button data-test="choose-word" onClick={() => pegarPalavra()}>Escolher Palavra</button>
+                <p data-test="word" className={ganhou} >{palavraMostrada}</p>
             </div>
         </div>
     )

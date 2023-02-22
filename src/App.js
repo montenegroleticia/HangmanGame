@@ -15,12 +15,13 @@ export default function App() {
   const [ganhou, setGanhou] = useState('');
   const [perdeu, setPerdeu] = useState(forca0);
   const [contador, setContador] = useState(0);
+  const [palavraMostrada, setPalavraMostrada] = useState('');
   
   return (
     <>
       <Jogo image={perdeu} 
       setPalavraEscondida={setPalavraEscondida} palavraEscondida={palavraEscondida} setLetrasClicadas={setLetrasClicadas} setLetrasCertas={setLetrasCertas} 
-      setGanhou={setGanhou} ganhou={ganhou} setPerdeu={setPerdeu} setContador={setContador} />
+      setGanhou={setGanhou} ganhou={ganhou} setPerdeu={setPerdeu} setContador={setContador} setPalavraMostrada={setPalavraMostrada} palavraMostrada={palavraMostrada} />
 
       <Letras state={ palavraEscondida ? false :true} 
       palavraEscondida={palavraEscondida} 
