@@ -6,13 +6,13 @@ import forca4 from "../assets/forca4.png";
 import forca5 from "../assets/forca5.png";
 import forca6 from "../assets/forca6.png";
 
-export default function Letras({state, palavraEscondida, setLetrasClicadas, letrasClicadas, setLetrasCertas, letrasCertas, setGanhou, setPerdeu, setContador, contador, setState, setPalavraMostrada}){
+export default function Letras({state, palavraEscondida, setLetrasClicadas, letrasClicadas, setLetrasCertas, letrasCertas, setGanhou, setPerdeu, setContador, contador, setState, setPalavraMostrada, palavraMostrada}){
 
     const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     const images = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
 
     function ganhouJogo(){
-        if (palavraEscondida.length === letrasCertas.length){
+        if (palavraMostrada.every(l => letrasCertas.includes(l))){
             setPalavraMostrada(palavraEscondida);
             setGanhou('ganhou');
             setState(true);
@@ -29,13 +29,17 @@ export default function Letras({state, palavraEscondida, setLetrasClicadas, letr
 
     function verificarPalavra(palavraEscondida, l){
         if (palavraEscondida.includes(l)){
-            setLetrasClicadas([...letrasClicadas, l]);
-            setLetrasCertas([...letrasCertas, l]);
-            setPalavraMostrada(palavraEscondida.map((l) => `${l}`));
+            let clicadas = [...letrasClicadas, l];
+            setLetrasClicadas(clicadas);
+            let certas = [...letrasCertas, l]
+            setLetrasCertas(certas);
+            let palavra = palavraEscondida.map((l) => letrasCertas.includes(l) ? (l) : "_ ")
+            setPalavraMostrada(palavra);
             ganhouJogo();
 
         } else {
-            setLetrasClicadas([...letrasClicadas, l]);
+            let clicadas = [...letrasClicadas, l];
+            setLetrasClicadas(clicadas);
             contador = contador + 1;
             setContador(contador);
             setPerdeu(images[contador]);

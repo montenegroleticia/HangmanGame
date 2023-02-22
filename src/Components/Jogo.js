@@ -5,8 +5,8 @@ export default function Jogo({setPalavraEscondida, image, setLetrasClicadas, set
 
     function pegarPalavra(){
         setState(false);
-        setLetrasClicadas('');
-        setLetrasCertas('');
+        setLetrasClicadas([]);
+        setLetrasCertas([]);
         setGanhou('');
         setPerdeu(forca0);
         setContador(0);
@@ -14,6 +14,7 @@ export default function Jogo({setPalavraEscondida, image, setLetrasClicadas, set
         const arrayPalavra = palavras[index].split('');
         setPalavraEscondida(arrayPalavra);
         setPalavraMostrada(arrayPalavra.map(() => "_ "));
+        console.log(arrayPalavra);
       }
       
     return (
@@ -21,7 +22,7 @@ export default function Jogo({setPalavraEscondida, image, setLetrasClicadas, set
             <img data-test="game-image" src={image} alt='forca' />
             <div className='palavra'>
                 <button data-test="choose-word" onClick={() => pegarPalavra()}>Escolher Palavra</button>
-                <p data-test="word" className={ganhou} >{palavraMostrada}</p>
+                <p data-test="word" className={ganhou}>{palavraMostrada}</p> 
             </div>
         </div>
     )

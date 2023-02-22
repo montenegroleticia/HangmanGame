@@ -9,19 +9,20 @@ import "./styles/style.css";
 import forca0 from "./assets/forca0.png";
 
 export default function App() {
-  const [palavraEscondida, setPalavraEscondida] = useState('');
-  const [letrasClicadas, setLetrasClicadas] = useState('');
+  const [palavraEscondida, setPalavraEscondida] = useState([]);
+  const [letrasClicadas, setLetrasClicadas] = useState([]);
   const [letrasCertas, setLetrasCertas] = useState(palavraEscondida);
   const [ganhou, setGanhou] = useState('');
   const [perdeu, setPerdeu] = useState(forca0);
   const [contador, setContador] = useState(0);
-  const [palavraMostrada, setPalavraMostrada] = useState('');
+  const [palavraMostrada, setPalavraMostrada] = useState([]);
   const [state, setState] = useState(true);
+  const [pesquisa, setPesquisa] = useState("");
 
   return (
     <>
       <Jogo image={perdeu} 
-      setPalavraEscondida={setPalavraEscondida} 
+      setPalavraEscondida={setPalavraEscondida}
       setLetrasClicadas={setLetrasClicadas} 
       setLetrasCertas={setLetrasCertas} 
       setGanhou={setGanhou} ganhou={ganhou} 
@@ -40,7 +41,11 @@ export default function App() {
       setState={setState}
       setPalavraMostrada={setPalavraMostrada} palavraMostrada={palavraMostrada} />
 
-      <Chute palavraEscondida={palavraEscondida} />
+      <Chute palavraEscondida={palavraEscondida} 
+      setPesquisa={setPesquisa} pesquisa={pesquisa} 
+      setPalavraMostrada={setPalavraMostrada} palavraMostrada={palavraMostrada} 
+      setGanhou={setGanhou}
+      setState={setState}  />
     </>
   );
 }
