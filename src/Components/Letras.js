@@ -43,7 +43,7 @@ export default function Letras({state, palavraEscondida, setLetrasClicadas, letr
             contador = contador + 1;
             setContador(contador);
             setPerdeu(images[contador]);
-            perdeuJogo(contador);
+            perdeuJogo();
         }
     }
 
