@@ -60,6 +60,7 @@ export default function App() {
         setGanhou={setGanhou}
         setState={setState}
         state={state}
+        setPerdeu={setPerdeu}
       />
     </>
   );

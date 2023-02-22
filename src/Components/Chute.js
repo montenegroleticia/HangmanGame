@@ -1,3 +1,5 @@
+import forca6 from "../assets/forca6.png";
+
 export default function Chute(
   palavraEscondida,
   pesquisa,
@@ -5,7 +7,8 @@ export default function Chute(
   setPalavraMostrada,
   setGanhou,
   setState,
-  state
+  state,
+  setPerdeu
 ) {
   function pesquisar() {
     if (pesquisa === palavraEscondida) {
@@ -16,6 +19,7 @@ export default function Chute(
       setPalavraMostrada(palavraEscondida);
       setGanhou("perdeu");
       setState(true);
+      setPerdeu(forca6);
     }
   }
 
