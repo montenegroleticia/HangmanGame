@@ -106,3 +106,9 @@ body {
 .esconder {
   display: none;
 }
+.ganhou {
+  color: #27AE60;
+}
+.perdeu {
+  color: #FF0000;
+}
