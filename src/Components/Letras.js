@@ -6,54 +6,102 @@ import forca4 from "../assets/forca4.png";
 import forca5 from "../assets/forca5.png";
 import forca6 from "../assets/forca6.png";
 
-export default function Letras({state, palavraEscondida, setLetrasClicadas, letrasClicadas, setLetrasCertas, letrasCertas, setGanhou, setPerdeu, setContador, contador, setState, setPalavraMostrada, palavraMostrada}){
+export default function Letras({
+  state,
+  palavraEscondida,
+  setLetrasClicadas,
+  letrasClicadas,
+  setLetrasCertas,
+  letrasCertas,
+  setGanhou,
+  setPerdeu,
+  setContador,
+  contador,
+  setState,
+  setPalavraMostrada,
+  palavraMostrada,
+}) {
+  const alfabeto = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
+  const images = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
 
-    const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    const images = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
-
-    function ganhouJogo(){
-        if (palavraMostrada.every(l => letrasCertas.includes(l))){
-            setPalavraMostrada(palavraEscondida);
-            setGanhou('ganhou');
-            setState(true);
-        }
+  function ganhouJogo() {
+    if (palavraMostrada.every((l) => letrasCertas.includes(l))) {
+      setPalavraMostrada(palavraEscondida);
+      setGanhou("ganhou");
+      setState(true);
     }
+  }
 
-    function perdeuJogo(){
-        if (contador === 6){
-            setPalavraMostrada(palavraEscondida);
-            setGanhou('perdeu');
-            setState(true);
-        }
+  function perdeuJogo() {
+    if (contador === 6) {
+      setPalavraMostrada(palavraEscondida);
+      setGanhou("perdeu");
+      setState(true);
     }
+  }
 
-    function verificarPalavra(palavraEscondida, l){
-        if (palavraEscondida.includes(l)){
-            let clicadas = [...letrasClicadas, l];
-            setLetrasClicadas(clicadas);
-            let certas = [...letrasCertas, l]
-            setLetrasCertas(certas);
-            let palavra = palavraEscondida.map((l) => letrasCertas.includes(l) ? (l) : "_ ")
-            setPalavraMostrada(palavra);
-            ganhouJogo();
-
-        } else {
-            let clicadas = [...letrasClicadas, l];
-            setLetrasClicadas(clicadas);
-            contador = contador + 1;
-            setContador(contador);
-            setPerdeu(images[contador]);
-            perdeuJogo();
-        }
+  function verificarPalavra(palavraEscondida, l) {
+    if (palavraEscondida.includes(l)) {
+      let clicadas = [...letrasClicadas, l];
+      setLetrasClicadas(clicadas);
+      let certas = [...letrasCertas, l];
+      setLetrasCertas(certas);
+      let palavra = palavraEscondida.map((l) =>
+        letrasCertas.includes(l) ? l : "_ "
+      );
+      setPalavraMostrada(palavra);
+      ganhouJogo();
+    } else {
+      let clicadas = [...letrasClicadas, l];
+      setLetrasClicadas(clicadas);
+      contador = contador + 1;
+      setContador(contador);
+      setPerdeu(images[contador]);
+      perdeuJogo();
     }
+  }
 
-    return (
-        <>
-        <div className="letras">
-            {alfabeto.map((l, index)=>
-            <button data-test="letter" onClick={() => verificarPalavra(palavraEscondida, l)} key={index} disabled={letrasClicadas.includes(l) ? true : state}>{l}</button>
-            )}
-        </div>
-        </>
-    )
+  return (
+    <>
+      <div className="letras">
+        {alfabeto.map((l, index) => (
+          <button
+            data-test="letter"
+            onClick={() => verificarPalavra(palavraEscondida, l)}
+            key={index}
+            disabled={letrasClicadas.includes(l) ? true : state}
+          >
+            {l}
+          </button>
+        ))}
+      </div>
+    </>
+  );
 }
