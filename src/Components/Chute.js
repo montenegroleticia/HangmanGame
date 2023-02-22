@@ -12,6 +12,10 @@ export default function Chute(
       setPalavraMostrada(palavraEscondida);
       setGanhou("ganhou");
       setState(true);
+    } else {
+      setPalavraMostrada(palavraEscondida);
+      setGanhou("perdeu");
+      setState(true);
     }
   }
 
