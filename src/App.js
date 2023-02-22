@@ -16,20 +16,28 @@ export default function App() {
   const [perdeu, setPerdeu] = useState(forca0);
   const [contador, setContador] = useState(0);
   const [palavraMostrada, setPalavraMostrada] = useState('');
-  
+  const [state, setState] = useState(true);
+
   return (
     <>
       <Jogo image={perdeu} 
-      setPalavraEscondida={setPalavraEscondida} palavraEscondida={palavraEscondida} setLetrasClicadas={setLetrasClicadas} setLetrasCertas={setLetrasCertas} 
-      setGanhou={setGanhou} ganhou={ganhou} setPerdeu={setPerdeu} setContador={setContador} setPalavraMostrada={setPalavraMostrada} palavraMostrada={palavraMostrada} />
+      setPalavraEscondida={setPalavraEscondida} palavraEscondida={palavraEscondida} 
+      setLetrasClicadas={setLetrasClicadas} 
+      setLetrasCertas={setLetrasCertas} 
+      setGanhou={setGanhou} ganhou={ganhou} 
+      setPerdeu={setPerdeu} 
+      setContador={setContador} 
+      setPalavraMostrada={setPalavraMostrada} palavraMostrada={palavraMostrada} 
+      setState={setState} />
 
-      <Letras state={ palavraEscondida ? false :true} 
+      <Letras state={state} 
       palavraEscondida={palavraEscondida} 
       setLetrasClicadas={setLetrasClicadas} letrasClicadas={letrasClicadas} 
       setLetrasCertas={setLetrasCertas} letrasCertas={letrasCertas}
       setGanhou={setGanhou}
       setPerdeu={setPerdeu}
-      setContador={setContador} contador={contador} />
+      setContador={setContador} contador={contador} 
+      setState={setState}/>
 
       <Chute palavraEscondida={palavraEscondida} />
     </>

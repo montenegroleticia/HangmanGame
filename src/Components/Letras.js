@@ -6,7 +6,7 @@ import forca4 from "../assets/forca4.png";
 import forca5 from "../assets/forca5.png";
 import forca6 from "../assets/forca6.png";
 
-export default function Letras({state, palavraEscondida, setLetrasClicadas, letrasClicadas, setLetrasCertas, letrasCertas, setGanhou, setPerdeu, setContador, contador}){
+export default function Letras({state, palavraEscondida, setLetrasClicadas, letrasClicadas, setLetrasCertas, letrasCertas, setGanhou, setPerdeu, setContador, contador, setState}){
 
     const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     const images = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
@@ -14,12 +14,14 @@ export default function Letras({state, palavraEscondida, setLetrasClicadas, letr
     function ganhouJogo(){
         if (palavraEscondida.includes(letrasCertas)){
            setGanhou('ganhou');
+           setState(true);
         }
     }
 
     function perdeuJogo(){
         if (contador === 6){
             setGanhou('perdeu');
+            setState(true);
         }
     }
 
