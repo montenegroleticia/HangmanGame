@@ -19,7 +19,6 @@ export default function Letras({
   contador,
   setState,
   setPalavraMostrada,
-  palavraMostrada,
 }) {
   const alfabeto = [
     "a",
@@ -52,7 +51,7 @@ export default function Letras({
   const images = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
 
   function ganhouJogo(palavra) {
-    if (palavra.join('') === palavraEscondida.join('')) {
+    if (palavra.join("") === palavraEscondida.join("")) {
       setPalavraMostrada(palavraEscondida);
       setGanhou("ganhou");
       setState(true);
@@ -71,7 +70,7 @@ export default function Letras({
   function verificarPalavra(palavraEscondida, l) {
     const clicadas = [...letrasClicadas, l];
     setLetrasClicadas(clicadas);
-    
+
     if (palavraEscondida.includes(l)) {
       const certas = [...letrasCertas, l];
       setLetrasCertas(certas);
@@ -80,7 +79,6 @@ export default function Letras({
       );
       setPalavraMostrada(palavra);
       ganhouJogo(palavra);
-      console.log(palavra);
     } else {
       contador = contador + 1;
       setContador(contador);
