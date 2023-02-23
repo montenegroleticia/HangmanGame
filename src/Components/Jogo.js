@@ -22,10 +22,12 @@ export default function Jogo({
     setPerdeu(forca0);
     setContador(0);
     const index = Math.floor(Math.random() * palavras.length);
-    const arrayPalavra = palavras[index].split("");
+    const palavraRetornada = palavras[index]
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+    const arrayPalavra = palavraRetornada.split("");
     setPalavraEscondida(arrayPalavra);
     setPalavraMostrada(arrayPalavra.map(() => "_ "));
-    console.log(arrayPalavra);
   }
 
   return (
