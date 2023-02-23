@@ -1,6 +1,6 @@
 import forca6 from "../assets/forca6.png";
 
-export default function Chute(
+export default function Chute({
   palavraEscondida,
   pesquisa,
   setPesquisa,
@@ -9,9 +9,9 @@ export default function Chute(
   setState,
   state,
   setPerdeu
-) {
+}) {
   function pesquisar() {
-    if (pesquisa === palavraEscondida) {
+    if (pesquisa === palavraEscondida.join('')) {
       setPalavraMostrada(palavraEscondida);
       setGanhou("ganhou");
       setState(true);
@@ -33,7 +33,7 @@ export default function Chute(
         onChange={e => setPesquisa(e.target.value)}
         disabled={state}
       ></input>
-      <button data-test="guess-button" onClick={pesquisar}>
+      <button data-test="guess-button" disabled={state} onClick={pesquisar}>
         Chutar
       </button>
     </div>
