@@ -60,7 +60,8 @@ export default function Letras({
   }
 
   function perdeuJogo() {
-    if (contador === 6) {
+    const morte = 6;
+    if (contador === morte) {
       setPalavraMostrada(palavraEscondida);
       setGanhou("perdeu");
       setState(true);
@@ -69,17 +70,17 @@ export default function Letras({
 
   function verificarPalavra(palavraEscondida, l) {
     if (palavraEscondida.includes(l)) {
-      let clicadas = [...letrasClicadas, l];
+      const clicadas = [...letrasClicadas, l];
       setLetrasClicadas(clicadas);
-      let certas = [...letrasCertas, l];
+      const certas = [...letrasCertas, l];
       setLetrasCertas(certas);
-      let palavra = palavraEscondida.map((l) =>
+      const palavra = palavraEscondida.map((l) =>
         letrasCertas.includes(l) ? l : "_ "
       );
       setPalavraMostrada(palavra);
       ganhouJogo();
     } else {
-      let clicadas = [...letrasClicadas, l];
+      const clicadas = [...letrasClicadas, l];
       setLetrasClicadas(clicadas);
       contador = contador + 1;
       setContador(contador);

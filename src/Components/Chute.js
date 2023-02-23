@@ -29,8 +29,8 @@ export default function Chute(
       <input
         data-test="guess-input"
         placeholder=""
-        value={pesquisa}
-        onChange={(e) => setPesquisa(e.target.value)}
+        value={pesquisa} 
+        onChange={e => setPesquisa(e.target.value)}
         disabled={state}
       ></input>
       <button data-test="guess-button" onClick={pesquisar}>
