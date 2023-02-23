@@ -51,8 +51,8 @@ export default function Letras({
   ];
   const images = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
 
-  function ganhouJogo() {
-    if (palavraMostrada.every((l) => letrasCertas.includes(l))) {
+  function ganhouJogo(palavra) {
+    if (palavra.join('') === palavraEscondida.join('')) {
       setPalavraMostrada(palavraEscondida);
       setGanhou("ganhou");
       setState(true);
@@ -69,20 +69,19 @@ export default function Letras({
   }
 
   function verificarPalavra(palavraEscondida, l) {
+    const clicadas = [...letrasClicadas, l];
+    setLetrasClicadas(clicadas);
+    
     if (palavraEscondida.includes(l)) {
-      const clicadas = [...letrasClicadas, l];
-      setLetrasClicadas(clicadas);
       const certas = [...letrasCertas, l];
       setLetrasCertas(certas);
-      console.log(letrasCertas);
       const palavra = palavraEscondida.map((l) =>
-        letrasCertas.includes(l) ? l : "_ "
+        certas.includes(l) ? l : "_ "
       );
       setPalavraMostrada(palavra);
-      ganhouJogo();
+      ganhouJogo(palavra);
+      console.log(palavra);
     } else {
-      const clicadas = [...letrasClicadas, l];
-      setLetrasClicadas(clicadas);
       contador = contador + 1;
       setContador(contador);
       setPerdeu(images[contador]);
