@@ -18,7 +18,8 @@ export default function App() {
   const [palavraMostrada, setPalavraMostrada] = useState([]);
   const [state, setState] = useState(true);
   const [pesquisa, setPesquisa] = useState("");
-
+  const [palavraSemCaracteres, setPalavraSemCaracteres] = useState([]);
+  console.log(palavraEscondida);
   return (
     <>
       <Jogo
@@ -33,6 +34,7 @@ export default function App() {
         setPalavraMostrada={setPalavraMostrada}
         palavraMostrada={palavraMostrada}
         setState={setState}
+        setPalavraSemCaracteres={setPalavraSemCaracteres}
       />
 
       <Letras
@@ -49,6 +51,7 @@ export default function App() {
         setState={setState}
         setPalavraMostrada={setPalavraMostrada}
         palavraMostrada={palavraMostrada}
+        palavraSemCaracteres={palavraSemCaracteres}
       />
 
       <Chute

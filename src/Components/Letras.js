@@ -19,6 +19,7 @@ export default function Letras({
   contador,
   setState,
   setPalavraMostrada,
+  palavraSemCaracteres,
 }) {
   const alfabeto = [
     "a",
@@ -74,9 +75,7 @@ export default function Letras({
     if (palavraEscondida.includes(l)) {
       const certas = [...letrasCertas, l];
       setLetrasCertas(certas);
-      const palavra = palavraEscondida.map((l) =>
-        certas.includes(l) ? l : "_ "
-      );
+      const palavra = palavraSemCaracteres.map((l, index) => certas.includes(l) ? palavraEscondida[index] : '_');
       setPalavraMostrada(palavra);
       ganhouJogo(palavra);
     } else {
