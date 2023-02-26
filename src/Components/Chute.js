@@ -9,9 +9,12 @@ export default function Chute({
   setState,
   state,
   setPerdeu,
+  palavraSemCaracteres,
 }) {
   function pesquisar() {
-    if (pesquisa === palavraEscondida.join("")) {
+    const chuteNormalizado = pesquisa.normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+    if (chuteNormalizado === palavraSemCaracteres.join("")) {
       setPalavraMostrada(palavraEscondida);
       setGanhou("ganhou");
       setState(true);

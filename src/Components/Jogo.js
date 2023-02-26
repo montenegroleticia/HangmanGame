@@ -26,10 +26,10 @@ export default function Jogo({
     const arrayPalavra = palavras[index].split("");
     const palavraRetornada = palavras[index]
       .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "");
-    setPalavraSemCaracteres(palavraRetornada.split(""));
+      .replace(/[\u0300-\u036f]/g, "").split("");
+    setPalavraSemCaracteres(palavraRetornada);
     setPalavraEscondida(arrayPalavra);
-    setPalavraMostrada(arrayPalavra.map(() => "_ "));
+    setPalavraMostrada(palavraRetornada.map(() => "_ "));
   }
 
   return (

@@ -64,6 +64,7 @@ export default function App() {
         setState={setState}
         state={state}
         setPerdeu={setPerdeu}
+        palavraSemCaracteres={palavraSemCaracteres}
       />
     </>
   );
