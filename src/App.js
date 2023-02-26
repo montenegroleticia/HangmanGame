@@ -19,7 +19,7 @@ export default function App() {
   const [state, setState] = useState(true);
   const [pesquisa, setPesquisa] = useState("");
   const [palavraSemCaracteres, setPalavraSemCaracteres] = useState([]);
-  console.log(palavraEscondida);
+
   return (
     <>
       <Jogo

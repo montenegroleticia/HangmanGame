@@ -72,7 +72,7 @@ export default function Letras({
     const clicadas = [...letrasClicadas, l];
     setLetrasClicadas(clicadas);
 
-    if (palavraEscondida.includes(l)) {
+    if (palavraSemCaracteres.includes(l)) {
       const certas = [...letrasCertas, l];
       setLetrasCertas(certas);
       const palavra = palavraSemCaracteres.map((l, index) => certas.includes(l) ? palavraEscondida[index] : '_');

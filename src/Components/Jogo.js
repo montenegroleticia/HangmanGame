@@ -26,7 +26,8 @@ export default function Jogo({
     const arrayPalavra = palavras[index].split("");
     const palavraRetornada = palavras[index]
       .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "").split("");
+      .replace(/[\u0300-\u036f]/g, "")
+      .split("");
     setPalavraSemCaracteres(palavraRetornada);
     setPalavraEscondida(arrayPalavra);
     setPalavraMostrada(palavraRetornada.map(() => "_ "));

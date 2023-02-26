@@ -12,8 +12,9 @@ export default function Chute({
   palavraSemCaracteres,
 }) {
   function pesquisar() {
-    const chuteNormalizado = pesquisa.normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
+    const chuteNormalizado = pesquisa
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
     if (chuteNormalizado === palavraSemCaracteres.join("")) {
       setPalavraMostrada(palavraEscondida);
       setGanhou("ganhou");
