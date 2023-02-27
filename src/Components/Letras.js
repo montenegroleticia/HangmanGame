@@ -75,7 +75,7 @@ export default function Letras({
     if (palavraSemCaracteres.includes(l)) {
       const certas = [...letrasCertas, l];
       setLetrasCertas(certas);
-      const palavra = palavraSemCaracteres.map((l, index) => certas.includes(l) ? palavraEscondida[index] : '_');
+      const palavra = palavraSemCaracteres.map((l, index) => certas.includes(l) ? palavraEscondida[index] : '_ ');
       setPalavraMostrada(palavra);
       ganhouJogo(palavra);
     } else {
