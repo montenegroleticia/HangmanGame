@@ -5,7 +5,7 @@ In the Hangman game, players guess a word letter by letter. They must guess the 
 
 You can access the deployment through the link below:
     
-    projeto8-jogoforca-olive.vercel.app
+    https://play-hangman-game.vercel.app/
 
 Tools
 
