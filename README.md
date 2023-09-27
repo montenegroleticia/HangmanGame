@@ -3,8 +3,10 @@ HANGMAN GAME
 In the Hangman game, players guess a word letter by letter. They must guess the word correctly before making 6 mistakes to win. If they make 6 mistakes, they lose the game.
 
 
+<img src="./assets/HangmanGame.gif" />
+
+
 You can access the deployment through the link below:
-    
     https://play-hangman-game.vercel.app/
 
 Tools
@@ -19,6 +21,7 @@ Tools
     <img align = "center" alt = "NPM" src = "https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white" />
 </div>
 
+<br>
 How to run
 
 1. Clone this repository:
