@@ -28,19 +28,15 @@ How to run
 ```bash
     https://github.com/montenegroleticia/HangmanGame.git
 ```
-2. Clone the back-end repository at and follow instructions to run:
-```bash
-    https://github.com/montenegroleticia/MyWallet-api
-```
-3. Install dependencies:
+2. Install dependencies:
 ```bash
 npm i
 ```
-4. Run the front-end with:
+3. Run the front-end with:
 ```bash
 npm start
 ```
-5. Finally access on your favorite browser:
+4. Finally access on your favorite browser:
 ```bash
 http://localhost:3000
 ```
